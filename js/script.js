@@ -89,8 +89,19 @@
 
     // Count down setup
 
-    $('.countdown').countdown('2017/6/10', function(event) {
-        $(this).html(event.strftime('%D days %H:%M:%S'));
+    $('.countdown').countdown('2018/4/20 3:00 PM', function(event) {
+        //$(this).html(event.strftime('%D days %H:%M:%S'));
+        var $this = $(this);
+
+        var format = '%H:%M:%S';
+        
+
+
+        if (event.elapsed) {
+            $this.html('It happened! We\'re Married!');
+        } else {
+            $this.html(event.strftime('%D days, %H:%M:%S'));
+        }
     });
 
 
